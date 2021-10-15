@@ -97,7 +97,23 @@ rem Display the Menu
 :Menu
 title Main Menu - Stardew Valley Downgrader
 cls
-
+echo.
+echo.
+echo 	                             --------------------------------------- 
+echo.
+echo 	                                    [33mStardew Valley Downgrader[0m                                     
+echo 	                                        Made by [36mRyah#1518[0m                                          
+echo.                                                                                                   
+echo 	                             ---------------------------------------                               
+echo.                                                                                                    
+echo 	               Not affiliated with Stardew Valley/DepotDownloader/Steam in any way.                
+echo 	                              This script utilizes DepotDownloader.                                
+echo 	 DepotDownloader needs to be in its own folder named "DepotDownloader" in this directory.
+echo				  If it is not found, the script will auto download a new copy.     
+echo.
+echo 	                             ---------------------------------------  
+echo.
+echo.
 rem Display Header
 echo Select a version      
 echo [92m------------------------------------[0m

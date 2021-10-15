@@ -13,8 +13,7 @@ Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/ta
 
 ## Todo:
   * ☐ Find a way to verify depot download without running DepotDownloader twice.
-  * ☐ Stop script from downloading all of the versions no matter what version is chosen. 
-    * Should just be a simple goto label fix.
+  * ✔ Stop script from downloading all of the versions no matter what version is chosen. [@done(21-10-15 12:10)](https://github.com/Ryah/SDV-Downgrader/commit/9ed20abea5a7d8035c0b48c10d37ac2fc858604e)
   * ☐ Make header show in main menu (gotta have those aesthetics)
   * ☐ Make downloader work for other games (maybe pull a list of depots from AppID and make it selectable?).
     * Would have to update from CmdMenuSel to GetInput batch plugin for that to work properly.
