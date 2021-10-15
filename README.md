@@ -1,11 +1,11 @@
-### _**I don't know why I wrote this in Batch. I daily drive Pop_OS. I had to use WINE just to bugtest this.**_
+### _**I don't know why I wrote this in Batch. I use Pop_OS. I had to use WINE just to bugtest this. I was not prepared.**_
 
 # Stardew Valley Downgrader
 
-## A Batch script to automate downloading older versions of Stardew Valley for speedrunning.
+A Batch script to automate downloading older versions of Stardew Valley for speedrunning.
 
-## Windows 10 v1803+ Only.
-### Uses tar and curl which were added in that version. If you've updated your Windows 10 at all since April 2018, you're good to go.
+**Windows 10 v1803+ Only.**
+**Uses tar and curl which were added in that version. If you've updated your Windows 10 at all since April 2018, you're good to go.**
 
 ## Usage
 Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/tag/Release) and double click the .bat file
