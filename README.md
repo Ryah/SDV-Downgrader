@@ -11,6 +11,7 @@ A Batch script to automate downloading older versions of Stardew Valley for spee
 Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/tag/Release) and double click the .bat file
 
 ## Known Issues
-Sometimes it doesn't download the entire game at once. I currently have a small workaround where it runs the DepotDownloader program twice to validate the files. Not really sure what's causing this, and I can't bugtest anymore tonight since I got ratelimited by the steam login. Will attempt to fix at a later date. 
+* Sometimes it doesn't download the entire game at once. I currently have a small workaround where it runs the DepotDownloader program twice to validate the files. Not really sure what's causing this, and I can't bugtest anymore tonight since I got ratelimited by the steam login. Will attempt to fix at a later date. 
+  * For now, if it doesn't download fully, rerun the tool and download the same version.
 
-For now, if it doesn't download fully, rerun the tool and download the same version.
+* Sometimes, the script continues to download all of the versions no matter what version you choose. Can be solved with a simple :eof goto.
