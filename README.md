@@ -1,4 +1,4 @@
-### _**I don't know why I wrote this in Batch. I use Pop_OS. I had to use WINE just to bugtest this. I was not prepared.**_
+### _**I don't know why I wrote this in Batch. I don't even use Windows. I use Pop_OS. I had to use WINE just to bugtest this. I was not prepared.**_
 
 # Stardew Valley Downgrader
 
