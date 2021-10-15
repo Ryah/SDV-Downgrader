@@ -171,7 +171,7 @@ if not exist "SDV1.4\" (
 )
 cls
 cmd /c DepotDownloader\DepotDownloader.exe -app 413150 -depot 413151 -manifest 2373680906867811602 -username %user_name% -password %user_password% -dir SDV1.4 -remember-password -debug
-cmd /c DepotDownloader\DepotDownloader.exe -app 413150 -depot 413151 -manifest 2373680906867811602 -username %user_name% -password %user_password% -dir SDV1.4 -validate-debug
+cmd /c DepotDownloader\DepotDownloader.exe -app 413150 -depot 413151 -manifest 2373680906867811602 -username %user_name% -password %user_password% -dir SDV1.4 -validate
 pause
 goto :MENU
 
