@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # This is the in development Electron Branch. Currently just a boilerplate.
+=======
+# This is the in development Electron Branch. Current just a boilerplate.
+>>>>>>> 2c383441f9d2daed7fc6542fc1d9f481199a018b
 
 ---
 
