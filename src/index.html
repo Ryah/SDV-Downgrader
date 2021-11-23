@@ -13,24 +13,27 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container center">
 		<header>
 			<h1 class="uk-heading-medium uk-heading-divider">SDV Downgrader</h1>
 		</header>
-		<div class="uk-flex-center" uk-grid>
-			<div class="uk-flex-first">
-				<ul class="uk-list">
-					<li>
-						<div class="uk-card uk-card-primary uk-card-body uk-flex-center uk-card-hover">Item 1</div>
-					</li>
-					<li>
-						<div class="uk-card uk-card-primary uk-card-body uk-flex-center uk-card-hover">Item 2</div>
-					</li>
-					<li>
-						<div class="uk-card uk-card-primary uk-card-body uk-flex-center uk-card-hover">Item 3</div>
-					</li>
-				</ul>
-
+		<div class="uk-button-group">
+			<button class="uk-button uk-button-primary">Select Version</button>
+			<div class="uk-inline">
+				<button class="uk-button uk-button-primary" type="button">
+					<span uk-icon="icon: triangle-down"></span>
+				</button>
+				<div uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;">
+					<ul class="uk-nav uk-dropdown-nav">
+						<li class="uk-active"><a href="#">Active</a></li>
+						<li><a href="#">Item</a></li>
+						<li class="uk-nav-divider"></li>
+						<li><a href="#">Item</a></li>
+						<li><a href="#">Item</a></li>
+						<li class="uk-nav-divider"></li>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
