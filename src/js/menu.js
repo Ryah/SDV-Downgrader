@@ -18,11 +18,11 @@ const showPreferences = () => {
 const helpSubmenu = [
 	openUrlMenuItem({
 		label: 'Website',
-		url: 'https://github.com/sindresorhus/electron-boilerplate'
+		url: 'https://github.com/Ryah/SDV-Downgrader'
 	}),
 	openUrlMenuItem({
 		label: 'Source Code',
-		url: 'https://github.com/sindresorhus/electron-boilerplate'
+		url: 'https://github.com/Ryah/SDV-Downgrader/tree/electron'
 	}),
 	{
 		label: 'Report an Issue…',
@@ -36,8 +36,8 @@ const helpSubmenu = [
 ${debugInfo()}`;
 
 			openNewGitHubIssue({
-				user: 'sindresorhus',
-				repo: 'electron-boilerplate',
+				user: 'Ryah',
+				repo: 'SDV-Downgrader',
 				body
 			});
 		}
@@ -50,8 +50,8 @@ if (!is.macos) {
 			type: 'separator'
 		},
 		aboutMenuItem({
-			icon: path.join(__dirname, 'static', 'icon.png'),
-			text: 'Created by Your Name'
+			icon: path.join(__dirname, '../assets', 'icon.png'),
+			text: 'Created by Ryah'
 		})
 	);
 }

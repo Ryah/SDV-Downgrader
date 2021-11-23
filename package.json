@@ -1,14 +1,14 @@
 {
-	"name": "app-name",
-	"productName": "App Name",
-	"version": "0.0.0",
-	"description": "The best app ever",
+	"name": "sdv-downgrader",
+	"productName": "SDV Downgrader",
+	"version": "v0.0.1",
+	"description": "Automate downloading older versions of Stardew Valley for speedrunning.",
 	"license": "MIT",
-	"repository": "sindresorhus/electron-boilerplate",
+	"repository": "Ryah/SDV-Downgrader",
 	"author": {
-		"name": "Your Name",
-		"email": "user@gmail.com",
-		"url": "https://sindresorhus.com"
+		"name": "Ryah",
+		"email": "14987609+Ryah@users.noreply.github.com",
+		"url": "https://github.com/Ryah/"
 	},
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
@@ -44,7 +44,7 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.company.AppName",
+		"appId": "com.Ryah.SDVDowngrader",
 		"mac": {
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true

@@ -1,20 +1,26 @@
 'use strict';
 const path = require('path');
-const {app, BrowserWindow, Menu} = require('electron');
+const {
+	app,
+	BrowserWindow,
+	Menu
+} = require('electron');
 /// const {autoUpdater} = require('electron-updater');
-const {is} = require('electron-util');
+const {
+	is
+} = require('electron-util');
 const unhandled = require('electron-unhandled');
 const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
-const config = require('./config.js');
-const menu = require('./menu.js');
+const config = require('./src/js/config.js');
+const menu = require('./src/js/menu.js');
 
 unhandled();
 debug();
 contextMenu();
 
 // Note: Must match `build.appId` in package.json
-app.setAppUserModelId('com.company.AppName');
+app.setAppUserModelId('com.Ryah.SDVDowngrader');
 
 // Uncomment this before publishing your first version.
 // It's commented out as it throws an error if there are no published versions.
@@ -34,8 +40,12 @@ const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.name,
 		show: false,
-		width: 600,
-		height: 400
+		width: 800,
+		height: 600,
+		icon: __dirname + '/src/assets/Icon.png',
+		webPreferences: {
+			devTools: true
+		}
 	});
 
 	win.on('ready-to-show', () => {
@@ -48,7 +58,7 @@ const createMainWindow = async () => {
 		mainWindow = undefined;
 	});
 
-	await win.loadFile(path.join(__dirname, 'index.html'));
+	await win.loadFile(path.join(__dirname, 'src/index.html'));
 
 	return win;
 };
@@ -74,17 +84,11 @@ app.on('window-all-closed', () => {
 	}
 });
 
-app.on('activate', async () => {
-	if (!mainWindow) {
-		mainWindow = await createMainWindow();
-	}
-});
-
 (async () => {
 	await app.whenReady();
 	Menu.setApplicationMenu(menu);
 	mainWindow = await createMainWindow();
 
-	const favoriteAnimal = config.get('favoriteAnimal');
-	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
+	// const favoriteAnimal = config.get('favoriteAnimal');
+	// mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
 })();

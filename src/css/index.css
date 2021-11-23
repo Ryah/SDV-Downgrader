@@ -1,8 +1,11 @@
 html,
 body {
+	text-align: center;
 	padding: 0;
 	margin: 0;
 	background: transparent;
+	/* background-color: #222831 !important; */
+	background-color: #EEEEEE !important;
 }
 
 /* Use OS default fonts */
@@ -22,14 +25,7 @@ body {
 }
 
 header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
-	text-align: center;
+	position: flex;
 }
 
 header h1 {
@@ -38,4 +34,5 @@ header h1 {
 	margin: 0;
 	padding: 0;
 	opacity: 0.7;
+	color: #222831 !important;
 }
