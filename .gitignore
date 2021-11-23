@@ -1,12 +1,3 @@
 node_modules
-.DS_Store
-Thumbs.db
-*.log
-
+yarn.lock
 /dist
-/temp
-
-# ignore everything in 'app' folder what had been generated from 'src' folder
-/app/app.js
-/app/main.js
-/app/**/*.map

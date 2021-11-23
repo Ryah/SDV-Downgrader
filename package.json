@@ -1,54 +1,75 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "description": "Starter for your Electron application",
-  "version": "0.0.0",
-  "private": true,
-  "author": "Mr. Gumby <mr.gumby@example.com>",
-  "copyright": "© 2017, Gumby inc.",
-  "homepage": "http://example.com",
-  "main": "app/main.js",
-  "build": {
-    "appId": "com.example.electron-boilerplate",
-    "files": [
-      "app/**/*",
-      "node_modules/**/*",
-      "package.json"
-    ],
-    "directories": {
-      "buildResources": "resources"
-    },
-    "publish": null
-  },
-  "scripts": {
-    "postinstall": "electron-builder install-app-deps",
-    "preunit": "webpack --config=build/webpack.unit.config.js --env=test",
-    "unit": "electron-mocha temp/specs.js --renderer --color --require source-map-support/register",
-    "pree2e": "webpack --config=build/webpack.app.config.js --env=test && webpack --config=build/webpack.e2e.config.js --env=test",
-    "e2e": "mocha temp/e2e.js --require source-map-support/register",
-    "test": "npm run unit && npm run e2e",
-    "start": "node build/start.js",
-    "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
-  },
-  "dependencies": {
-    "fs-jetpack": "^4.1.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-loader": "^8.2.2",
-    "chai": "^4.1.0",
-    "css-loader": "^5.2.0",
-    "electron": "^13.0.1",
-    "electron-builder": "^22.5.1",
-    "electron-mocha": "^10.0.0",
-    "mocha": "^8.3.2",
-    "source-map-support": "^0.5.6",
-    "spectron": "^15.0.0",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0",
-    "webpack-merge": "^5.7.3",
-    "webpack-node-externals": "^3.0.0"
-  }
+	"name": "app-name",
+	"productName": "App Name",
+	"version": "0.0.0",
+	"description": "The best app ever",
+	"license": "MIT",
+	"repository": "sindresorhus/electron-boilerplate",
+	"author": {
+		"name": "Your Name",
+		"email": "user@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"scripts": {
+		"postinstall": "electron-builder install-app-deps",
+		"lint": "xo",
+		"test": "npm run lint",
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder --macos --linux --windows",
+		"release": "np"
+	},
+	"dependencies": {
+		"electron-context-menu": "^3.0.0",
+		"electron-debug": "^3.2.0",
+		"electron-store": "^8.0.0",
+		"electron-unhandled": "^3.0.2",
+		"electron-updater": "^4.3.8",
+		"electron-util": "^0.15.1"
+	},
+	"devDependencies": {
+		"electron": "^12.0.6",
+		"electron-builder": "^22.10.5",
+		"np": "^7.5.0",
+		"xo": "^0.39.1"
+	},
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		]
+	},
+	"np": {
+		"publish": false,
+		"releaseDraft": false
+	},
+	"build": {
+		"appId": "com.company.AppName",
+		"mac": {
+			"category": "public.app-category.social-networking",
+			"darkModeSupport": true
+		},
+		"dmg": {
+			"iconSize": 160,
+			"contents": [
+				{
+					"x": 180,
+					"y": 170
+				},
+				{
+					"x": 480,
+					"y": 170,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb"
+			],
+			"category": "Network;Chat"
+		}
+	}
 }
