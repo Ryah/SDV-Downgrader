@@ -8,8 +8,6 @@
 
 Stardew Valley Downgrader is a Batch script to automate downloading older versions of Stardew Valley for speedrunning using [DepotDownloader](https://github.com/SteamRE/DepotDownloader/).
 
-![Demo Screenshot](https://i.imgur.com/8cJxBVY.png)
-
 ## Install
 *macOS 10.10+, Linux, and Windows 7+ are supported (64-bit only).*
 
