@@ -16,10 +16,10 @@ const showPreferences = () => {
 };
 
 const helpSubmenu = [
-	openUrlMenuItem({
-		label: 'Website',
-		url: 'https://github.com/Ryah/SDV-Downgrader'
-	}),
+	// openUrlMenuItem({
+	// 	label: 'Website',
+	// 	url: 'https://github.com/Ryah/SDV-Downgrader'
+	// }),
 	openUrlMenuItem({
 		label: 'Source Code',
 		url: 'https://github.com/Ryah/SDV-Downgrader/tree/electron'

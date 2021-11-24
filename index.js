@@ -1,5 +1,8 @@
 'use strict';
 const path = require('path');
+const fs = require('fs');
+const ini = require('ini');
+
 const {
 	app,
 	BrowserWindow,
@@ -14,6 +17,8 @@ const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
 const config = require('./src/js/config.js');
 const menu = require('./src/js/menu.js');
+
+
 
 unhandled();
 debug();
@@ -44,8 +49,8 @@ const createMainWindow = async () => {
 		height: 600,
 		icon: __dirname + '/src/assets/Icon.png',
 		webPreferences: {
-			devTools: true
-		}
+			devTools: false,
+		},
 	});
 
 	win.on('ready-to-show', () => {
