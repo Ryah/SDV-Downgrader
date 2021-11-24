@@ -4,43 +4,37 @@
 <head>
 	<meta charset="utf-8">
 	<title>Stardew Valley Downgrader</title>
-	<link rel="stylesheet" href="css/index.css">
-	<!-- UIKit CSS -->
-	<link rel="stylesheet" href="css/uikit.min.css" />
-	<!-- UIKit JS -->
-	<script src="js/uikit.min.js"></script>
-	<script src="js/uikit-icons.min.js"></script>
+	<link rel="stylesheet" href="css/index.min.css">
+	<link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css" />
 </head>
 
 <body>
 	<div class="container center">
 		<header>
-			<h1 class="uk-heading-medium uk-heading-divider reveal-text">SDV Downgrader</h1>
+			<p class="display-1 reveal-text">SDV Downgrader</p>
 		</header>
-		<div class="uk-button-group">
-			<button class="uk-button uk-button-primary">Select Version</button>
-			<div class="uk-inline">
-				<button class="uk-button uk-button-primary" type="button">
-					<span uk-icon="icon: triangle-down"></span>
-				</button>
-				<div uk-dropdown="mode: click; boundary: ! .uk-button-group; boundary-align: true;">
-					<ul class="uk-nav uk-dropdown-nav">
-						<li class="uk-active"><a href="#">Active</a></li>
-						<li><a href="#">Item</a></li>
-						<li class="uk-nav-divider"></li>
-						<li><a href="#">Item</a></li>
-						<li><a href="#">Item</a></li>
-						<li class="uk-nav-divider"></li>
-						<li><a href="#">Item</a></li>
-					</ul>
-				</div>
-			</div>
+		<hr class="separator separator--line">
+		<div id="version" class="btn-group" role="group" aria-label="Select Version Box">
+			<select class="form-select" title="Select Version" aria-label="Select Version Box">
+				<!-- <option selected value="0">Select Version</option> -->
+				<option value="1.5">v1.5</option>
+				<option value="1.4">v1.4</option>
+				<option value="1.3">v1.3</option>
+				<option value="1.2">v1.2</option>
+				<option value="1.1">v1.1</option>
+				<option value="1.0">v1.0</option>
+			</select>
+		</div>
+		<div class="btn-group download-button" role="group" aria-label="Button group example">
+			<button type="button" class="btn btn btn-outline-primary">Download</button>
 		</div>
 
 		<footer>
 
 		</footer>
 	</div>
+	
+	<script src="js/lib/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
