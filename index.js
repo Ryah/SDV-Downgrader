@@ -49,7 +49,7 @@ const createMainWindow = async () => {
 		height: 600,
 		icon: __dirname + '/src/assets/Icon.png',
 		webPreferences: {
-			devTools: false,
+			devTools: true,
 		},
 	});
 
