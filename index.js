@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const http = require('https')
 const fs = require('fs');
 const ini = require('ini');
 
@@ -17,8 +18,8 @@ const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
 const config = require('./src/js/config.js');
 const menu = require('./src/js/menu.js');
-
-
+const EventEmitter = require('events')
+const loadingEvents = new EventEmitter()
 
 unhandled();
 debug();
@@ -49,7 +50,10 @@ const createMainWindow = async () => {
 		height: 600,
 		icon: __dirname + '/src/assets/Icon.png',
 		webPreferences: {
+			preload: './src/js/preload.js',
 			devTools: true,
+			nodeIntegration: true,
+			contextIsolation: false,
 		},
 	});
 
@@ -63,10 +67,12 @@ const createMainWindow = async () => {
 		mainWindow = undefined;
 	});
 
-	await win.loadFile(path.join(__dirname, 'src/index.html'));
+	// await win.loadFile(path.join(__dirname, 'src/index.html'));
 
 	return win;
 };
+
+// Download function
 
 // Prevent multiple instances of the app
 if (!app.requestSingleInstanceLock()) {
@@ -93,4 +99,35 @@ app.on('window-all-closed', () => {
 	await app.whenReady();
 	Menu.setApplicationMenu(menu);
 	mainWindow = await createMainWindow();
+	mainWindow.loadFile('src/loading.html')
+
+	// Our loadingEvents object listens for 'finished' before loading main page
+	loadingEvents.on('finished', () => {
+		mainWindow.loadFile('src/index.html')
+	})
+
+	loadingEvents.on('progress', percentage => {
+        mainWindow.webContents.send('progress', percentage)
+    })
+
+	download('https://speed.hetzner.de/1GB.bin', '1GB.bin')
+	// setTimeout(() => loadingEvents.emit('finished'), 3000)
 })();
+
+const download = (url, filename, closeCallback) => {
+    const file = fs.createWriteStream(filename);
+
+    http.get(url, function(response) {
+        let total = 0;
+        response.on('data', (c) => {
+            total += c.length
+            loadingEvents.emit('progress', total/response.headers['content-length'])
+        })
+        response.pipe(file)
+        file.on('finish', function() {
+        	file.close(() => loadingEvents.emit('finished'))
+    	}).on('error', function(err) {
+        	fs.unlink(dest);
+    	})  
+	})
+}

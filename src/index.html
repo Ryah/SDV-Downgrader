@@ -6,6 +6,12 @@
 	<title>Stardew Valley Downgrader</title>
 	<link rel="stylesheet" href="css/index.min.css">
 	<link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css" />
+	<!-- Bootstrap Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script>const $ = require('jquery');</script>
+	<script>require('popper.js');</script>
+	<script>require('bootstrap');</script>
+
 </head>
 
 <body>
@@ -26,15 +32,16 @@
 			</select>
 		</div>
 		<div class="btn-group download-button" role="group" aria-label="Button group example">
-			<button type="button" class="btn btn btn-outline-primary">Download</button>
+			<button type="button" class="btn btn btn-outline-primary" onclick="test();">Download</button>
 		</div>
 
 		<footer>
 
 		</footer>
 	</div>
-	
-	<script src="js/lib/bootstrap/bootstrap.bundle.min.js"></script>
+	<script>
+		require('./js/renderer.js');
+	</script>
 </body>
 
 </html>
