@@ -1,13 +1,4 @@
 const child_process = require('child_process');
-const {
-	verify
-} = require('crypto');
-const EventEmitter = require('events')
-const loadingEvents = new EventEmitter()
-
-window.test = function () {
-	alert("test");
-}
 
 document.getElementById('submit').onclick = () => {
 	//Variable declarations
@@ -57,37 +48,41 @@ document.getElementById('submit').onclick = () => {
 	if (EinputTrue && PinputTrue) {
 		var einput = document.getElementById("Einput").value;
 		var pinput = document.getElementById("Pinput").value;
-		//Check version
+
+		//Check version and download
 		const select = document.querySelector("select[name='versionNum']")
 		const value = select.value;
 		const option = select.querySelector(`option[value='${value}']`)
 		const vNum = option.innerText
-		console.log(vNum)
-		// loadingEvents.emit('downloading')
+		console.log("Downloading " + vNum)
 		switch (vNum) {
 			case "v1.0":
-				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 3352391531516945586 -username " + einput + " -password " + pinput);
+                document.getElementById("header-text").innerHTML = "Downloading v1.0";
+				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 3352391531516945586 -username " + einput + " -password " + pinput + " -dir SDV1.0");
 				break;
 			case "v1.1":
-				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 7487215307508292747 -username " + einput + " -password " + pinput);
+                document.getElementById("header-text").innerHTML = "Downloading v1.1";
+				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 7487215307508292747 -username " + einput + " -password " + pinput + " -dir SDV1.1");
 				break;
 			case "v1.2":
-				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 5793210319202900873 -username " + einput + " -password " + pinput);
+                document.getElementById("header-text").innerHTML = "Downloading v1.2";
+				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 5793210319202900873 -username " + einput + " -password " + pinput + " -dir SDV1.2");
 				break;
 			case "v1.3":
-				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 3080804457574934302 -username " + einput + " -password " + pinput);
+                document.getElementById("header-text").innerHTML = "Downloading v1.3";
+				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 3080804457574934302 -username " + einput + " -password " + pinput + " -dir SDV1.3");
 				break;
 			case "v1.4":
-				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 2373680906867811602 -username " + einput + " -password " + pinput);
+                document.getElementById("header-text").innerHTML = "Downloading v1.4";
+				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 2373680906867811602 -username " + einput + " -password " + pinput + " -dir SDV1.4");
 				break;
 			case "v1.5":
-				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 4487511898025325586 -username " + einput + " -password " + pinput);
+                document.getElementById("header-text").innerHTML = "Downloading v1.5";
+				child_process.exec("start cmd /K /../../DepotDownloader/DepotDownloader.exe -app 413150 -depot 413151 -manifest 4487511898025325586 -username " + einput + " -password " + pinput + " -dir SDV1.5");
 				break;
 			default:
-				alert("i don't know how you got here but you need help");
+				alert("i don't know how you got here what did you do");
 				break;
 		}
 	}
-
-
 }

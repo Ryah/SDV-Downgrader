@@ -3,7 +3,6 @@ const path = require('path');
 // const http = require('https');
 const request = require('request');
 const fs = require('fs');
-const ini = require('ini');
 const unhandled = require('electron-unhandled');
 const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
@@ -127,7 +126,7 @@ app.on('window-all-closed', () => {
 			console.log("DepotDownloader not found. Downloading.")
 			download('https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.5/depotdownloader-2.4.5.zip', 'DepotDownloader.zip')
 		} else {
-			console.log("DepotDownloader exists. Checking for config.ini");
+			console.log("DepotDownloader exists. Moving to Index.html");
 			loadingEvents.emit('finished')
 		}
 
