@@ -8,3 +8,5 @@ yarn.lock
 .gitattributes
 .github
 config.ini
+/DepotDownloader
+DepotDownloader.zip
