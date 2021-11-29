@@ -1,3 +1,4 @@
+/* Variables */
 $separator-size: 1.9px;
 $separator-border-style: solid;
 $separator-border-color: #222831;
@@ -8,161 +9,162 @@ $separator-space-bottom: 40px;
 
 html,
 body {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    /* background-color: #222831 !important; */
-    background-color: #EEEEEE !important;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	/* background-color: #222831 !important; */
+	background-color: #EEEEEE !important;
 }
 
-/* Use OS default fonts */
+
 body {
-    font-family:
-        system-ui,
-        -apple-system,
-        'Segoe UI',
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji';
-    text-rendering: optimizeLegibility;
-    font-feature-settings: 'liga', 'clig', 'kern';
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'liga', 'clig', 'kern';
 }
 
 header {
-    position: flex;
+	position: flex;
 }
 
 .display-1 {
-    font-size: 60px !important;
-    font-weight: 200 !important;
-    margin: 0;
-    padding: 10px;
-    opacity: 0.7;
-    color: #222831 !important;
+	font-size: 60px !important;
+	font-weight: 200 !important;
+	margin: 0;
+	padding: 10px;
+	opacity: 0.7;
+	color: #222831 !important;
 }
 
 .container {
-    height: 250px;
-    position: relative;
-    // border: 3px solid green;
-    // max-width: 540px !important;
+	height: 250px;
+	position: relative;
+	// border: 3px solid green;
+	// max-width: 540px !important;
 }
 
 .center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 
 :root {
-    --delay: 1000ms;
-    --duration: 800ms;
-    --iterations: 1;
+	--delay: 1000ms;
+	--duration: 800ms;
+	--iterations: 1;
 }
 
-/* •·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•· */
 
-
+/* Text Reveal */
 .reveal-text,
 .reveal-text::after {
-    animation-delay: var(--animation-delay, 2s);
-    animation-iteration-count: var(--iterations, 1);
-    animation-duration: var(--duration, 800ms);
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+	animation-delay: var(--animation-delay, 2s);
+	animation-iteration-count: var(--iterations, 1);
+	animation-duration: var(--duration, 800ms);
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
 .reveal-text {
-    --animation-delay: var(--delay, 0);
-    --animation-duration: var(--duration, 800ms);
-    --animation-iterations: var(--iterations, 1);
-    position: relative;
-    font-size: 8vw !important;
-    animation-name: clip-text;
-    color: #FFF;
-    white-space: nowrap;
-    cursor: default;
+	--animation-delay: var(--delay, 0);
+	--animation-duration: var(--duration, 800ms);
+	--animation-iterations: var(--iterations, 1);
+	position: relative;
+	font-size: 8vw !important;
+	animation-name: clip-text;
+	color: #FFF;
+	white-space: nowrap;
+	cursor: default;
 
 
-    &::after {
-        content: "";
-        position: absolute;
-        z-index: 999;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #00ADB5;
-        transform: scaleX(0);
-        transform-origin: 0 50%;
-        pointer-events: none;
-        animation-name: text-revealer;
-    }
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #00ADB5;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		pointer-events: none;
+		animation-name: text-revealer;
+	}
 
 }
 
 
 @keyframes clip-text {
-    from {
-        clip-path: inset(0 100% 0 0);
-    }
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
 
-    to {
-        clip-path: inset(0 0 0 0);
-    }
+	to {
+		clip-path: inset(0 0 0 0);
+	}
 }
 
 
 @keyframes text-revealer {
 
-    0%,
-    50% {
-        transform-origin: 0 50%;
-    }
+	0%,
+	50% {
+		transform-origin: 0 50%;
+	}
 
-    60%,
-    100% {
-        transform-origin: 100% 50%;
-    }
+	60%,
+	100% {
+		transform-origin: 100% 50%;
+	}
 
 
-    60% {
-        transform: scaleX(1);
-    }
+	60% {
+		transform: scaleX(1);
+	}
 
-    100% {
-        transform: scaleX(0);
-    }
+	100% {
+		transform: scaleX(0);
+	}
 }
 
-
+/* Separator Line */
 .separator {
-  margin-top: $separator-space-top;
-  margin-bottom: $separator-space-bottom;
-  border: 0;
+	margin-top: $separator-space-top;
+	margin-bottom: $separator-space-bottom;
+	border: 0;
 }
 
 .separator--line {
-  border: 0;
-  border-bottom: $separator-size $separator-border-style $separator-border-color;
+	border: 0;
+	border-bottom: $separator-size $separator-border-style $separator-border-color;
 
-  width: 0;
-  animation: separator-width 1s ease-out forwards;
-  animation-delay: 2s;
+	width: 0;
+	animation: separator-width 1s ease-out forwards;
+	animation-delay: 2s;
 }
+
 @keyframes separator-width {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+	0% {
+		width: 0;
+	}
+
+	100% {
+		width: 100%;
+	}
 }

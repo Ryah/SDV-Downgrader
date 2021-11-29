@@ -20,8 +20,8 @@
 			<p class="display-1 reveal-text">SDV Downgrader</p>
 		</header>
 		<hr class="separator separator--line">
-		<div id="version" class="btn-group" role="group" aria-label="Select Version Box">
-			<select class="form-select" title="Select Version" aria-label="Select Version Box">
+		<div id="version" name="version" class="btn-group" role="group" aria-label="Select Version Box">
+			<select class="form-select" title="Select Version" name="versionNum" aria-label="Select Version Box">
 				<!-- <option selected value="0">Select Version</option> -->
 				<option value="1.5">v1.5</option>
 				<option value="1.4">v1.4</option>
@@ -32,9 +32,9 @@
 			</select>
 		</div>
 		<div class="btn-group download-button" role="group" aria-label="Button group example">
-			<button type="button" class="btn btn btn-outline-primary" onclick="test();">Download</button>
+			<button type="button" id="submit" class="btn btn btn-outline-primary">Download</button>
 		</div>
-
+		
 		<footer>
 
 		</footer>

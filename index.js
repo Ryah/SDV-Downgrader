@@ -1,9 +1,17 @@
 'use strict';
 const path = require('path');
-const http = require('https')
+// const http = require('https');
+const request = require('request');
 const fs = require('fs');
 const ini = require('ini');
-
+const unhandled = require('electron-unhandled');
+const debug = require('electron-debug');
+const contextMenu = require('electron-context-menu');
+const config = require('./src/js/config.js');
+const menu = require('./src/js/menu.js');
+const EventEmitter = require('events')
+const loadingEvents = new EventEmitter()
+const AdmZip = require("adm-zip");
 const {
 	app,
 	BrowserWindow,
@@ -13,13 +21,6 @@ const {
 const {
 	is
 } = require('electron-util');
-const unhandled = require('electron-unhandled');
-const debug = require('electron-debug');
-const contextMenu = require('electron-context-menu');
-const config = require('./src/js/config.js');
-const menu = require('./src/js/menu.js');
-const EventEmitter = require('events')
-const loadingEvents = new EventEmitter()
 
 unhandled();
 debug();
@@ -72,7 +73,7 @@ const createMainWindow = async () => {
 	return win;
 };
 
-// Download function
+
 
 // Prevent multiple instances of the app
 if (!app.requestSingleInstanceLock()) {
@@ -95,6 +96,7 @@ app.on('window-all-closed', () => {
 	}
 });
 
+// Main function probably 
 (async () => {
 	await app.whenReady();
 	Menu.setApplicationMenu(menu);
@@ -102,32 +104,64 @@ app.on('window-all-closed', () => {
 	mainWindow.loadFile('src/loading.html')
 
 	// Our loadingEvents object listens for 'finished' before loading main page
+
 	loadingEvents.on('finished', () => {
 		mainWindow.loadFile('src/index.html')
 	})
 
 	loadingEvents.on('progress', percentage => {
-        mainWindow.webContents.send('progress', percentage)
-    })
+		mainWindow.webContents.send('progress', percentage)
+	})
 
-	download('https://speed.hetzner.de/1GB.bin', '1GB.bin')
-	// setTimeout(() => loadingEvents.emit('finished'), 3000)
+	loadingEvents.on('error', () => {
+		mainWindow.loadFile('src/error.html')
+	})
+
+	// check if the DepotDownloader directory exists, and if it doesn't, download it.
+	fs.access("./DepotDownloader", function(error) {
+		if (error) {
+			console.log("DepotDownloader not found. Downloading.")
+			download('https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.5/depotdownloader-2.4.5.zip', 'DepotDownloader.zip')
+		} else {
+			console.log("DepotDownloader exists. Checking for config.ini");
+			loadingEvents.emit('finished')
+		}
+	  })	  
 })();
 
-const download = (url, filename, closeCallback) => {
-    const file = fs.createWriteStream(filename);
 
-    http.get(url, function(response) {
-        let total = 0;
-        response.on('data', (c) => {
-            total += c.length
-            loadingEvents.emit('progress', total/response.headers['content-length'])
-        })
-        response.pipe(file)
-        file.on('finish', function() {
-        	file.close(() => loadingEvents.emit('finished'))
-    	}).on('error', function(err) {
-        	fs.unlink(dest);
-    	})  
+// Download function (call with download('url', 'filename'))
+const download = (url, dest, cb) => {
+    const file = fs.createWriteStream(dest);
+    const sendReq = request.get(url);
+
+    // verify response code
+    sendReq.on('response', (response) => {
+        if (response.statusCode !== 200) {
+            return cb('Response status was ' + response.statusCode);
+        }
+
+        sendReq.pipe(file);
+    });
+
+    // close() is async, call cb after close completes
+    file.on('finish', function () {
+		var zip = new AdmZip("DepotDownloader.zip");
+		var zipEntries = zip.getEntries();
+		zip.extractAllTo(/*target path*/ "./DepotDownloader/", /*overwrite*/ true);
+		file.close(()=> loadingEvents.emit('finished'))
 	})
-}
+
+    // check for request errors
+    sendReq.on('error', (err) => {
+        fs.unlink(dest);
+		loadingEvents.emit('error')
+        return cb(err.message);
+    });
+
+    file.on('error', (err) => { // Handle errors
+        fs.unlink(dest); // Delete the file async. (But we don't check the result)
+		loadingEvents.emit('error')
+        return cb(err.message);
+    });
+};

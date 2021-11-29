@@ -12,12 +12,11 @@
 	<script>require('popper.js');</script>
 	<script>require('bootstrap');</script>
 	<script>
-	require('electron').ipcRenderer.on('progress', (event, message) => {
-    	const percent = Math.floor(message * 100)
-    	window.document.getElementById('percentage').innerHTML = percent
-	})
+		require('electron').ipcRenderer.on('progress', (event, message) => {
+			const percent = Math.floor(message * 100)
+			window.document.getElementById('percentage').innerHTML = percent
+		})
 	</script>
-
 </head>
 
 <body>
@@ -25,9 +24,6 @@
 		<header>
 			<p class="display-1">Loading...</p>
 			<hr class="separator separator--line">
-			<div class="display-4">
-				<h2>Content is <span id="percentage">0</span>% downloaded</h2>
-			</div>
 		</header>
 	</div>
 	<script>
