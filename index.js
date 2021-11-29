@@ -117,6 +117,10 @@ app.on('window-all-closed', () => {
 		mainWindow.loadFile('src/error.html')
 	})
 
+	loadingEvents.on('downloading', () => {
+		mainWindow.loadFile('src/download.html')
+	})
+
 	// check if the DepotDownloader directory exists, and if it doesn't, download it.
 	fs.access("./DepotDownloader", function(error) {
 		if (error) {
@@ -126,9 +130,10 @@ app.on('window-all-closed', () => {
 			console.log("DepotDownloader exists. Checking for config.ini");
 			loadingEvents.emit('finished')
 		}
-	  })	  
-})();
 
+
+	})
+})();
 
 // Download function (call with download('url', 'filename'))
 const download = (url, dest, cb) => {

@@ -11,13 +11,19 @@
 	<script>const $ = require('jquery');</script>
 	<script>require('popper.js');</script>
 	<script>require('bootstrap');</script>
-
+	<script>
+		require('electron').ipcRenderer.on('progress', (event, message) => {
+			const percent = Math.floor(message * 100)
+			window.document.getElementById('percentage').innerHTML = percent
+		})
+	</script>
 </head>
 
 <body>
 	<div class="container center">
 		<header>
-			<p class="display-1">ERROR with Request</p>
+			<p class="display-1">Downloading...</p>
+			<hr class="separator separator--line">
 		</header>
 	</div>
 	<script>

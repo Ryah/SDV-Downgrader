@@ -32,7 +32,8 @@
 		"ini": "^2.0.0",
 		"jquery": "^3.6.0",
 		"popper.js": "^1.16.1",
-		"request": "^2.88.2"
+		"request": "^2.88.2",
+		"xterm": "^4.15.0"
 	},
 	"devDependencies": {
 		"electron": "^12.0.6",
