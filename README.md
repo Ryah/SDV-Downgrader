@@ -2,7 +2,7 @@
 
 **Windows 10 v1803+ (April 2018 Update) Only.**
 
-Stardew Valley Downgrader is a Batch script to automate downloading older versions of Stardew Valley for speedrunning using [DepotDownloader](https://github.com/SteamRE/DepotDownloader/).
+Stardew Valley Downgrader is a Batch script to automate downloading older versions of Stardew Valley for speedrunning using the native Steam Console.
 
 ![Demo Screenshot](https://i.imgur.com/8cJxBVY.png)
 
@@ -18,14 +18,12 @@ Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/ta
   * ☐ Possibly make this work on Mac and Linux
     * Requires complete port to either Electron or Mono
     * Considering a Giraffe knows more Mono than me, probably Electron. I can brand it as ":sparkles:Modern:sparkles: and :zany_face:Hackable:zany_face: "
-    * Could also make 3 separate versions but I have no clue how to develop for Mac 
+    * Could also make 3 separate versions but I have no clue how to develop for Mac.
 
 ## Notes:
 CmdMenuSel reports the option selected in the %ERRORCODE% variable. If you wish to add manifests to this, Add onto the menu list with the correct errorcode and label, then put your code in its own label UNDER the others. Make sure to end the block with ```goto :eof```
 
 ## Credits:
-[DepotDownloader](https://github.com/SteamRE/DepotDownloader)
-
 [CmdMenuSel](https://github.com/TheBATeam/CmdMenuSel-by-Judago)
 
 ---
