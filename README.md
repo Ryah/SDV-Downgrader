@@ -4,13 +4,15 @@
 
 Stardew Valley Downgrader is a Batch script to automate downloading older versions of Stardew Valley for speedrunning using the native Steam Console.
 
-![Demo Screenshot](https://i.imgur.com/8cJxBVY.png)
+![Demo Screenshot](https://user-images.githubusercontent.com/14987609/168975360-cd044c11-7e7a-470f-9163-2758249e7061.png)
+
+
 
 ## Usage:
 Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/tag/Release) and double click the .bat file
 
 ## Todo:
-  * ☐ Find a way to verify depot download without running DepotDownloader twice.
+  * ✗ Find a way to verify depot download without running DepotDownloader twice. [@done by removing DepotDownloader(5-18-22 1:46)](https://github.com/Ryah/SDV-Downgrader/commit/9c3405322464a407e34d1f5a6b6f68ecbc007ec4)
   * ✔ Stop script from downloading all of the versions no matter what version is chosen. [@done(21-10-15 12:10)](https://github.com/Ryah/SDV-Downgrader/commit/9ed20abea5a7d8035c0b48c10d37ac2fc858604e#diff-162634f9851b49e6a62c3e03663a495bb401505fd800614c68084ebfa3715346R123)
   * ✔ Make header show in main menu (gotta have those aesthetics) [@done(21-10-15 12:24)](https://github.com/Ryah/SDV-Downgrader/commit/4e987584622036022dcae0dfd94345103455b547#diff-162634f9851b49e6a62c3e03663a495bb401505fd800614c68084ebfa3715346)
   * ☐ Make downloader work for other games (maybe pull a list of depots from AppID and make it selectable?).
