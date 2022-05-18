@@ -1,13 +1,17 @@
 # Stardew Valley Downgrader
 
 Stardew Valley Downgrader is a Batch script to automate downloading older versions of Stardew Valley for speedrunning using the native Steam Console.
-
-![Demo Screenshot](https://user-images.githubusercontent.com/14987609/168975360-cd044c11-7e7a-470f-9163-2758249e7061.png)
-
+<details>
+  <summary>Screenshots</summary>
+ 
+  ![Demo Screenshot](https://user-images.githubusercontent.com/14987609/168975360-cd044c11-7e7a-470f-9163-2758249e7061.png)
+ 
+  ![Demo Screenshot](https://user-images.githubusercontent.com/14987609/168978055-1c1c41ee-a37f-4852-970b-7cd4be13f5c6.png)
+</details>
 
 
 ## Usage:
-Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/tag/Release) and double click the .bat file
+Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/tag/v2.0.0) and double click the .bat file
 
 ## Todo:
   * ✗ Find a way to verify depot download without running DepotDownloader twice. [@done by removing DepotDownloader(5-18-22 1:46)](https://github.com/Ryah/SDV-Downgrader/commit/9c3405322464a407e34d1f5a6b6f68ecbc007ec4)
