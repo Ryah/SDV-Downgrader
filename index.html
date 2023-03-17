@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--  automatic dark mode :) -->
+<html class="anim-fade-in" data-color-mode="auto" data-dark-theme="dark" data-light-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://unpkg.com/@primer/css@20.4.8/dist/primer.css" rel="stylesheet" />
+    <title>Stardew Valley Downgrader</title>
+</head>
+
+<body>
+    <script src="downloader.js"></script>
+    <div class="mx-full">
+        <div hidden id="emptywarning">
+            <div class="flash flash-warn mx-2 mt-2 color-shadow-medium" id="emptyalert">
+                <svg class="octicon" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"
+                        fill-rule="evenodd"></path>
+                </svg>Please fill in all required fields.
+            </div>
+        </div>
+        <!-- <div class="f0-light text-center title">Stardew Valley<br \>Downgrader</div> -->
+
+        <form id="theform" class="mx-6 my-4">
+            <div class="form-group mx-4 mt-1">
+                <div class="form-group-header">
+                    <label for="username">Username</label>
+                </div>
+                <input class="form-control input-block" id="username" type="text" placeholder="Steam Username" />
+            </div>
+
+            <div class="form-group mx-4 mt-1">
+                <div class="form-group-header">
+                    <label for="password">Password</label>
+                </div>
+                <input class="form-control input-block" id="password" type="password"
+                    placeholder="Steam Password" />
+            </div>
+
+            <div class="form-group mx-4 mt-1 required">
+                <div class="form-group-header ">
+                    <label for="version_dropdown">Version</label>
+                </div>
+
+                <div aria-label="Select your Stardew Valley version here." class="form-group-body">
+                    <select aria-label="Preference" class="width-full dropbtn" id="versiondropdown">
+                        <div class="dropdown-content">
+                            <option>Stardew Valley 1.0</option>
+                            <option>Stardew Valley 1.1</option>
+                            <option>Stardew Valley 1.2</option>
+                            <option>Stardew Valley 1.3</option>
+                            <option>Stardew Valley 1.4</option>
+                        </div>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="form-group buttons btnStack">
+        <button id="downloadbtn"><img src="assets/img/download.png"></button>
+        <button id="githubbtn"><img src="assets/img/github.png"></button>
+    </div>
+    </div>
+    <style>
+        @font-face {
+            font-family: 'stardew_valleyregular';
+            src: url('assets/fonts/stardew_valley-webfont.woff2') format('woff2'),
+                url('assets/fonts/stardew_valley-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html {
+            background-image: url("assets/img/background.png");
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, .0);
+        }
+
+        .title {
+            font-size: 50px !important;
+            font-family: 'stardew_valleyregular';
+        }
+
+        #theform {
+            margin-top: 390px !important;
+        }
+
+        .form-control:focus-visible{
+            border-color: rgba(0, 0, 0, .0);
+            outline: none;
+            box-shadow: none;
+        }
+        
+        select:focus{
+            outline: none;
+            border-color:rgba(0, 0, 0, .0);
+            border-width: 0px !important;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        .btnStack .et_pb_button_module_wrapper {
+            display: inline-block !important;
+            /* margin: 0 20px; */
+        }
+
+        .form-group {
+            margin: 0 0 0 0;
+        }
+
+        select {
+            -webkit-appearance: none;
+            appearance: none;
+            text-indent: 5px;
+        }
+
+        option {
+            background-color: #d87e00 !important;
+            text-indent: 15px;
+        }
+
+        .dropbtn {
+            background-image: url("assets/img/dropdown.png");
+            font-family: 'stardew_valleyregular';
+            font-size: 23px;
+            color: #611a0d !important;
+            background-color: rgba(0, 0, 0, .0);
+            border-style: none;
+        }
+
+        #downloadbtn,
+        #githubbtn {
+            background-color: rgba(0, 0, 0, .0);
+            border-style: none;
+        }
+        
+        #downloadbtn:active,
+        #githubbtn:active {
+            transform: scale(0.94);
+            /* Scaling button to 0.94 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+        }
+
+        .form-group-header {
+            font-family: 'stardew_valleyregular';
+            font-size: 25px;
+            color: #611a0d !important;
+        }
+
+        .input-block {
+            background-image: url("assets/img/textbox.png");
+            font-family: 'stardew_valleyregular';
+            color: #611a0d;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, .0) !important;
+            border-style: none;
+        }
+    </style>
+</body>
+
+</html>

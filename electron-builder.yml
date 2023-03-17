@@ -1,0 +1,32 @@
+appId: ryah.sdv.downgrader
+productName: Stardew Valley Downgrader
+copyright: Copyright © 2022 Ryah | This work is free. Licensed under the GNU GPLv3 Public License
+
+linux:
+  executableName: SDV-Downgrader
+  category: Utility;FileTools;
+  maintainer: Ryah
+  target:
+    - target: AppImage
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
+
+# lmao mac building only works on mac
+mac:
+  category: public.app-category.utilities
+  target:
+    - target: dmg
+      arch:
+        - x64
+
+win:
+  legalTrademarks: Copyright © 2022 Ryah | This work is free. Licensed under the GNU GPLv3 Public License
+  target:
+    - target: portable
+      arch:
+        - x64
