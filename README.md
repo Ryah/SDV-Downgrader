@@ -4,9 +4,9 @@ Stardew Valley Downgrader
 <p align="center">
 Stardew Valley Downgrader is a app written in Electron to automate downloading older versions of Stardew Valley for speedrunning using DepotDownloader.
 </p>
-<p align="center">
+
 I used [SteamDepotDownloaderGUI by mmvanheusden](https://github.com/mmvanheusden/SteamDepotDownloaderGUI) as a base for this project.
-</p>
+
 <details>
   <summary>Screenshots</summary>
  
