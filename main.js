@@ -1,22 +1,22 @@
 const {app, BrowserWindow} = require("electron")
 
 const createWindow = () => {
-	var splash = new BrowserWindow({
-		width: 600,
-		height: 193, 
-		transparent: true, 
-		frame: false, 
-		alwaysOnTop: true 
-	})
-	splash.loadFile("splash.html")
-	splash.center()
+	// var splash = new BrowserWindow({
+	// 	width: 600,
+	// 	height: 193, 
+	// 	transparent: true, 
+	// 	frame: false, 
+	// 	alwaysOnTop: true 
+	// })
+	// splash.loadFile("splash.html")
+	// splash.center()
 	// Create the browser window.
 	const mainWindow = new BrowserWindow({
 		autoHideMenuBar: true,
 		resizable: false,
 		width: 466,
 		height: 770,
-		show: false,
+		// show: false,
 		useContentSize: true,
 		maximizable: false,
 		webPreferences: {
@@ -28,10 +28,10 @@ const createWindow = () => {
 	// and load the index.html of the app.
 	mainWindow.loadFile("index.html")
 	mainWindow.setIcon("build/icon.ico")
-	mainWindow.webContents.on("did-finish-load", function() {
-		splash.close()
-		mainWindow.show()
-	})
+	// mainWindow.webContents.on("did-finish-load", function() {
+	// 	splash.close()
+	// 	mainWindow.show()
+	// })
 	// Open the DevTools for debugging, only if not in production.
 	if (!app.isPackaged) {
 		mainWindow.webContents.openDevTools({mode: "detach"})
