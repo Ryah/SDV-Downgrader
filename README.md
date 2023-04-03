@@ -8,7 +8,7 @@ Stardew Valley Downgrader is a app written in Electron to automate downloading o
 
 
 ## Usage:
-Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/tag/v2.0.0) and run it.
+Download the [latest version](https://github.com/Ryah/SDV-Downgrader/releases/latest) and run it.
 
 
 ## Credits:
